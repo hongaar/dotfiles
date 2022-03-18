@@ -55,8 +55,8 @@ create_gitconfig_local() {
 
 [user]
 
-    name =
-    email =
+    name = Joram van den Boezem
+    email = joram@vandenboezem.nl
     # signingkey =" \
         >> "$FILE_PATH"
     fi
