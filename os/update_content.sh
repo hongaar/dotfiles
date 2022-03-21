@@ -10,26 +10,19 @@ main() {
     ssh -T git@github.com &> /dev/null
 
     if [ $? -ne 1 ]; then
-        ./set_github_ssh_key.sh \
-            || return 1
+        return 1
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     print_in_purple "\n • Update content\n\n"
 
-    ask_for_confirmation "Do you want to update the content from the 'dotfiles' directory?"
+    git fetch --all 1> /dev/null \
+        && git reset --hard origin/main 1> /dev/null \
+        && git checkout main &> /dev/null \
+        && git clean -fd 1> /dev/null
 
-    if answer_is_yes; then
-
-        git fetch --all 1> /dev/null \
-            && git reset --hard origin/main 1> /dev/null \
-            && git checkout main &> /dev/null \
-            && git clean -fd 1> /dev/null
-
-        print_result $? "Update content"
-
-    fi
+    print_result $? "Update content"
 
 }
 
