@@ -300,3 +300,5 @@
     #     by the local ones
 
     path = ~/.gitconfig.local
+[credential]
+	helper = "!f() { /home/vscode/.vscode-server/bin/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1/node /tmp/vscode-remote-containers-9c2e248402a006b7dea73d767a7d561d05a14c13.js $*; }; f"

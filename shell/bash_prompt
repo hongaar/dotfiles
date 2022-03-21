@@ -116,12 +116,24 @@ set_prompts() {
         # Solarized colors.
         # https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values
 
-        cyan=$(tput setaf 37)
-        green=$(tput setaf 64)
-        orange=$(tput setaf 166)
-        white=$(tput setaf 15)
-        yellow=$(tput setaf 136)
+        base03=$(tput setaf 234)     #1c1c1c
+        base02=$(tput setaf 235)     #262626
+        base01=$(tput setaf 240)     #585858
+        base00=$(tput setaf 241)     #626262
+        base0=$(tput setaf 244)      #808080
+        base1=$(tput setaf 245)      #8a8a8a
+        base2=$(tput setaf 254)      #e4e4e4
+        base3=$(tput setaf 230)      #ffffd7
+        yellow=$(tput setaf 136)     #af8700
+        orange=$(tput setaf 166)     #d75f00
+        red=$(tput setaf 124)        #af0000
+        magenta=$(tput setaf 125)    #af005f
+        violet=$(tput setaf 61)      #5f5faf
+        blue=$(tput setaf 33)        #0087ff
+        cyan=$(tput setaf 37)        #00afaf
+        green=$(tput setaf 64)       #5f8700
 
+        neutral=$base1
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -138,13 +150,13 @@ set_prompts() {
 
     PS1+="$reset$bold"
     PS1+="$orange\u"        # Username
-    PS1+="$white@"
+    PS1+="$neutral@"
     PS1+="$yellow\h"        # Host
-    PS1+="$white: "
+    PS1+="$neutral: "
     PS1+="$green\w"         # Working directory
-    PS1+="\$(get_git_repository_details \"$white on $cyan\")"
+    PS1+="\$(get_git_repository_details \"$neutral on $cyan\")"
     PS1+="\n"
-    PS1+="\[$reset\]\[$white\]$ \[$reset\]"
+    PS1+="\[$reset\]\[$neutral\]$ \[$reset\]"
 
     export PS1
 
