@@ -7,13 +7,16 @@
 verify_os() {
 
     declare -r MINIMUM_UBUNTU_VERSION="20.04"
+    declare -r MINIMUM_DEBIAN_VERSION="11"
 
-    local os_name="$(get_os)"
-    local os_version="$(get_os_version)"
+    . /etc/os-release
+
+    local os_name=$ID
+    local os_version=$VERSION_ID
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Check if the OS is `Ubuntu` and
+    # Check if the OS is `ubuntu` or `debian` and
     # it's above the required version.
 
     if [ "$os_name" == "ubuntu" ]; then
@@ -24,10 +27,18 @@ verify_os() {
             printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
         fi
 
+    elif [ "$os_name" == "debian" ]; then
+
+        if is_supported_version "$os_version" "$MINIMUM_DEBIAN_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for Debian %s+" "$MINIMUM_DEBIAN_VERSION"
+        fi
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     else
-        printf "Sorry, this script is intended only for Ubuntu!"
+        printf "Sorry, this script is intended only for Ubuntu or Debian!"
     fi
 
     return 1

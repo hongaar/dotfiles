@@ -1,12 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/ubuntu
 {
-  "name": "Ubuntu",
+  "name": "Ubuntu / Debian",
   "runArgs": ["--init"],
   "build": {
     "dockerfile": "Dockerfile",
     // Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
     // Use hirsute or bionic on local arm64/Apple Silicon.
+    // Optionally, switch to Debian by setting to: bullseye, buster
     "args": { "VARIANT": "focal" }
   },
 
