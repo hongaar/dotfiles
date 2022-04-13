@@ -16,8 +16,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Make `vim` the default editor.
 
-export EDITOR=code
-export K9S_EDITOR=code -w
+export EDITOR="code"
+export K9S_EDITOR="code -w"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
