@@ -1,4 +1,7 @@
 #!/bin/bash
 
+[ -f "$HOME/.bashrc.old" ] \
+    && . "$HOME/.bashrc.old"
+
 [ -n "$PS1" ] \
     && . "$HOME/.bash_profile"

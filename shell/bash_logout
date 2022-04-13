@@ -2,5 +2,8 @@
 
 # Clear console on exit.
 
+[ -f "$HOME/.bash_logout.old" ] \
+    && . "$HOME/.bash_logout.old"
+
 [ "$SHLVL" == 1 ] \
     && clear &> /dev/null
