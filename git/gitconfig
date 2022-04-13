@@ -228,7 +228,7 @@
     abbrev = 12
     attributesFile = ~/.gitattributes
     autocrlf = input
-    editor = vim
+    editor = code
     excludesFile = ~/.gitignore
 
 [diff]
