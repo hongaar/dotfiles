@@ -277,6 +277,11 @@
 
     followTags = true
 
+    # This will infer the origin my_branch part, thus you can do `git push -u`
+    # https://stackoverflow.com/a/22933955
+
+    default = current
+
 [user]
 
     # Do not guess the user's identity.

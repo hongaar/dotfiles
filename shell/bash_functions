@@ -2,6 +2,16 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Git add, commit, push
+
+function push() {
+    git add .
+    git commit -m "$*"
+    git push --set-upstream
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Clone a repository and install its dependencies.
 
 clone() {
