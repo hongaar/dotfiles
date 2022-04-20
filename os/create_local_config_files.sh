@@ -11,7 +11,7 @@ create_bash_local() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-   if [ ! -e "$FILE_PATH" ] || [ -z "$FILE_PATH" ]; then
+    if [ ! -e "$FILE_PATH" ] || [ -z "$FILE_PATH" ]; then
 
         DOTFILES_BIN_DIR="$(dirname "$(pwd)")/bin/"
 
@@ -30,7 +30,7 @@ export PATH
 
 " \
         >> "$FILE_PATH"
-   fi
+    fi
 
     print_result $? "$FILE_PATH"
 

@@ -14,7 +14,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Make `vim` the default editor.
+# Make `code` the default editor.
 
 export EDITOR="code"
 export KUBE_EDITOR="code -w"

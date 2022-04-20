@@ -7,6 +7,7 @@
 verify_os() {
 
     declare -r MINIMUM_UBUNTU_VERSION="20.04"
+    declare -r MINIMUM_ZORIN_VERSION="16"
     declare -r MINIMUM_DEBIAN_VERSION="11"
 
     . /etc/os-release
@@ -24,7 +25,15 @@ verify_os() {
         if is_supported_version "$os_version" "$MINIMUM_UBUNTU_VERSION"; then
             return 0
         else
-            printf "Sorry, this script is intended only for Ubuntu %s+" "$MINIMUM_UBUNTU_VERSION"
+            printf "Sorry, this script is intended only for Ubuntu %s+\n" "$MINIMUM_UBUNTU_VERSION"
+        fi
+
+    elif [ "$os_name" == "zorin" ]; then
+
+        if is_supported_version "$os_version" "$MINIMUM_ZORIN_VERSION"; then
+            return 0
+        else
+            printf "Sorry, this script is intended only for Zorin %s+\n" "$MINIMUM_ZORIN_VERSION"
         fi
 
     elif [ "$os_name" == "debian" ]; then
@@ -32,13 +41,13 @@ verify_os() {
         if is_supported_version "$os_version" "$MINIMUM_DEBIAN_VERSION"; then
             return 0
         else
-            printf "Sorry, this script is intended only for Debian %s+" "$MINIMUM_DEBIAN_VERSION"
+            printf "Sorry, this script is intended only for Debian %s+\n" "$MINIMUM_DEBIAN_VERSION"
         fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     else
-        printf "Sorry, this script is intended only for Ubuntu or Debian!"
+        printf "Sorry, this script is intended only for Ubuntu, Zorin or Debian (you're using %s %s)\n" "$os_name" "$os_version"
     fi
 
     return 1
