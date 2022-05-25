@@ -30,9 +30,14 @@ export PATH
 
 " \
         >> "$FILE_PATH"
-    fi
 
-    print_result $? "$FILE_PATH"
+        print_result $? "$FILE_PATH"
+
+    else
+
+        print_skipped "$FILE_PATH (already exists)"
+
+    fi
 
 }
 
@@ -59,9 +64,14 @@ create_gitconfig_local() {
     email = joram@vandenboezem.nl
     # signingkey =" \
         >> "$FILE_PATH"
-    fi
 
-    print_result $? "$FILE_PATH"
+        print_result $? "$FILE_PATH"
+
+    else
+
+        print_skipped "$FILE_PATH (already exists)"
+
+    fi
 
 }
 
@@ -73,9 +83,14 @@ create_vimrc_local() {
 
     if [ ! -e "$FILE_PATH" ]; then
         printf "" >> "$FILE_PATH"
-    fi
 
-    print_result $? "$FILE_PATH"
+        print_result $? "$FILE_PATH"
+
+    else
+
+        print_skipped "$FILE_PATH (already exists)"
+
+    fi
 
 }
 

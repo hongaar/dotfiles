@@ -258,6 +258,10 @@ print_success() {
     print_in_green "   [✔] $1\n"
 }
 
+print_skipped() {
+    print_in_yellow "   [-] $1\n"
+}
+
 print_warning() {
     print_in_yellow "   [!] $1\n"
 }
