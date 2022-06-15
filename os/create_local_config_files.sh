@@ -49,20 +49,29 @@ create_gitconfig_local() {
 
     if [ ! -e "$FILE_PATH" ] || [ -z "$FILE_PATH" ]; then
 
+        SSH_KEY_ID="$(ssh-add -L)"
+        
         printf "%s\n" \
 "[commit]
 
     # Sign commits using GPG.
     # https://help.github.com/articles/signing-commits-using-gpg/
 
-    # gpgsign = true
+    gpgsign = true
 
+[tag]
+
+    gpgsign = true
+
+[gpg]
+
+    format = ssh
 
 [user]
 
     name = Joram van den Boezem
     email = joram@vandenboezem.nl
-    # signingkey =" \
+    signingkey = \"$SSH_KEY_ID\"" \
         >> "$FILE_PATH"
 
         print_result $? "$FILE_PATH"

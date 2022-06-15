@@ -54,6 +54,22 @@ verify_os() {
 
 }
 
+verify_git() {
+
+    # We need at least git version 2.34.0 to sign with ssh keys
+
+    declare -r MINIMUM_GIT_VERSION="2.34.0"
+
+    local git_version
+    
+    git_version=$(git --version | cut -d' ' -f3)
+
+    if ! is_supported_version "$git_version" "$MINIMUM_GIT_VERSION"; then
+        printf "Sorry, this script needs git version %s+ to sign commits with an ssh key\n" "$MINIMUM_GIT_VERSION"
+        return 1
+    fi
+}
+
 # ----------------------------------------------------------------------
 # | Main                                                               |
 # ----------------------------------------------------------------------
@@ -86,6 +102,18 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    ./os/installs/main.sh
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Ensure git is supported and
+    # it's above the required version.
+
+    verify_git \
+        || exit 1
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # ./os/create_directories.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -95,10 +123,6 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     ./os/create_local_config_files.sh
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # ./os/installs/main.sh
     
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

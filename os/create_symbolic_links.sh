@@ -51,7 +51,7 @@ create_symlinks() {
 
         elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
             
-            print_success "$targetFile → $sourceFile"
+            print_skipped "$targetFile → $sourceFile (already exists)"
         
         else
 
