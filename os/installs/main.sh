@@ -17,17 +17,17 @@ print_in_purple "\n • Installs\n\n"
 update
 upgrade
 
-./build-essentials.sh
+# ./build-essentials.sh
 ./git.sh
-./nvm.sh
-./browsers.sh
-./compression_tools.sh
-./image_tools.sh
-./misc.sh
-./misc_tools.sh
-./npm.sh
-./tmux.sh
-./vim.sh
+# ./nvm.sh
+# ./browsers.sh
+# ./compression_tools.sh
+# ./image_tools.sh
+# ./misc.sh
+# ./misc_tools.sh
+# ./npm.sh
+# ./tmux.sh
+# ./vim.sh
 
 ./cleanup.sh
 
