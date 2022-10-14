@@ -132,6 +132,15 @@ unset -f alias_completion
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Load ssh-agent
+
+if command -v keychain &> /dev/null
+then
+    eval "$(keychain --eval)"
+fi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Clear system messages (system copyright notice, the date
 # and time of the last login, the message of the day, etc.).
 

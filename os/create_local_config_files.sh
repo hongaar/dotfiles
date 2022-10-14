@@ -71,7 +71,7 @@ create_gitconfig_local() {
 
     name = Joram van den Boezem
     email = joram@vandenboezem.nl
-    signingkey = \"$SSH_KEY_ID\"" \
+    signingkey = \"${SSH_KEY_ID//\\//}\"" \
         >> "$FILE_PATH"
 
         print_result $? "$FILE_PATH"
