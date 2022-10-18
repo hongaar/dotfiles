@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# Include old bashrc file
+
 [ -f "$HOME/.bashrc.old" ] \
     && . "$HOME/.bashrc.old"
+
+# Include bash_profile (.bash_profile is executed for login shells, while
+# .bashrc is executed for interactive non-login shells)
 
 [ -n "$PS1" ] \
     && . "$HOME/.bash_profile"

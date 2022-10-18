@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Clear console on exit.
+# Include old bash_logout file
 
 [ -f "$HOME/.bash_logout.old" ] \
     && . "$HOME/.bash_logout.old"
+
+# Clear console on exit.
 
 [ "$SHLVL" == 1 ] \
     && clear &> /dev/null
