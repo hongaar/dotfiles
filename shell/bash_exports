@@ -16,8 +16,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Make `code` the default editor.
 
-export EDITOR="code"
-export KUBE_EDITOR="code -w"
+export EDITOR="code -w"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
