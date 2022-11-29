@@ -61,7 +61,8 @@ create_gitconfig_local() {
 
 [tag]
 
-    gpgsign = true
+    # When uncommented, lightweight tags will be disabled (?)
+    # gpgsign = true
 
 [gpg]
 
