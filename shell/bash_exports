@@ -17,6 +17,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Make `code` the default editor.
 
 export EDITOR="code -w"
+export KUBE_EDITOR="code -w"
+export GIT_EDITOR="code -w"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
