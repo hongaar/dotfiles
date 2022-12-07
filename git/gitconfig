@@ -269,6 +269,9 @@
     #                     │        └─ decorations (branch, heads or tags)
     #                     └─ hash (abbreviated)
 
+[pull]
+
+    rebase = true
 
 [push]
 
