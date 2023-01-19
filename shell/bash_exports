@@ -37,7 +37,7 @@ export HISTFILESIZE=10000
 
 # Don't add certain commands to the history file.
 
-export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"
+export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
