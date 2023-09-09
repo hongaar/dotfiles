@@ -47,6 +47,17 @@ create_gitconfig_local() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # codespaces
+
+    if [ -n "${CODESPACES}" ]; then
+
+        print_skipped "$FILE_PATH (codespaces)"
+
+        return 1
+
+    fi
+
+
     if [ ! -e "$FILE_PATH" ] || [ -z "$FILE_PATH" ]; then
 
         SSH_KEY_ID="$(ssh-add -L)"
