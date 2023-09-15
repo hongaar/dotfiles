@@ -136,7 +136,7 @@ unset -f alias_completion
 
 if command -v keychain &> /dev/null
 then
-    eval "$(keychain --eval id_rsa)"
+    eval "$(keychain --eval id_rsa id_ed25519)"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
