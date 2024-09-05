@@ -134,9 +134,17 @@ unset -f alias_completion
 
 # Load ssh-agent
 
-if command -v keychain &> /dev/null
-then
-    eval "$(keychain --eval id_rsa id_ed25519)"
+if [ -z "$SSH_AUTH_SOCK" ]; then
+
+    echo "Using $SSH_AUTH_SOCK"
+
+else 
+
+    if command -v keychain &> /dev/null
+    then
+        eval "$(keychain --eval id_rsa id_ed25519)"
+    fi
+
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
