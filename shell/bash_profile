@@ -134,7 +134,7 @@ unset -f alias_completion
 
 # Load ssh-agent
 
-if [ -z "$SSH_AUTH_SOCK" ]; then
+if [ -n "$SSH_AUTH_SOCK" ]; then
 
     echo "Using $SSH_AUTH_SOCK"
 
