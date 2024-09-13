@@ -4,6 +4,13 @@
 # | Helper Functions                                                   |
 # ----------------------------------------------------------------------
 
+ensure_term() {
+
+    if [ -z "$TERM" ]; then
+        export TERM="xterm-256color"
+    fi
+}
+
 verify_os() {
 
     declare -r MINIMUM_UBUNTU_VERSION="20.04"
@@ -81,6 +88,12 @@ main() {
 
     cd "$(dirname "${BASH_SOURCE[0]}")" \
         || exit 1
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Make sure we have a $TERM, to stop tput from complaining
+
+    ensure_term
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
