@@ -6,9 +6,8 @@
 
 ensure_term() {
 
-    # if [ -z "$TERM" ]; then
-        export TERM="xterm-256color"
-    # fi
+    export TERM="${TERM:-dumb}"
+
 }
 
 verify_os() {
