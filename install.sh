@@ -6,9 +6,9 @@
 
 ensure_term() {
 
-    if [ -z "$TERM" ]; then
+    # if [ -z "$TERM" ]; then
         export TERM="xterm-256color"
-    fi
+    # fi
 }
 
 verify_os() {
