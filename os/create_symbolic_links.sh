@@ -22,7 +22,7 @@ create_symlinks() {
         "shell/inputrc"
 
         "git/gitattributes"
-        "git/gitconfig"
+        # "git/gitconfig"
         "git/gitignore"
 
         "tmux/tmux.conf"
