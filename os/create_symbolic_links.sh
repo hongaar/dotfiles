@@ -22,7 +22,7 @@ create_symlinks() {
         "shell/inputrc"
 
         "git/gitattributes"
-        "git/gitconfig"
+        # "git/gitconfig"
         "git/gitignore"
 
         "tmux/tmux.conf"
@@ -31,6 +31,14 @@ create_symlinks() {
         "vim/vimrc"
 
     )
+
+    # only copy git/gitconfig if not in codespaces
+    
+    if [ -z "${CODESPACES}" ]; then
+    
+        FILES_TO_SYMLINK+=("git/gitconfig")
+    
+    fi
 
     local i=""
     local sourceFile=""
